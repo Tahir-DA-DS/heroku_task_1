@@ -2,6 +2,20 @@ const http = require("http");
 
 const port = 3000
 
+http.get('http://localhost:3000/', (res) => {
+
+    let myData=''
+    res.on('data', (chunk)=>{myData+=chunk})
+    res.on('end', ()=>{
+      try {const parsedData = JSON.parse(myData)
+        console.log(parsedData)
+      }catch(error){
+        console.error(error)
+      }
+    })
+})
+
+
 
 const server= http.createServer((req, res)=>{
     
@@ -15,11 +29,5 @@ const server= http.createServer((req, res)=>{
     
 
 })
-
-
-http.get('http://localhost:3000/', (res) => {
-
-})
-
 
 server.listen(process.env.PORT ||port)
