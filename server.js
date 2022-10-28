@@ -1,8 +1,6 @@
 const http = require("http");
 
-const port = 8000
-
-http.get('http://localhost:3000/', (res) => {
+http.get('http://localhost:8000/', (res) => {
 
     let myData=''
     res.on('data', (chunk)=>{myData+=chunk})
@@ -30,4 +28,4 @@ const server= http.createServer((req, res)=>{
 
 })
 
-server.listen(process.env.PORT ||port)
+server.listen(process.env.PORT || 8000)
