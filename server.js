@@ -1,4 +1,7 @@
 const http = require("http");
+const express = require("express")
+
+const server = express()
 
 http.get('http://localhost:8000/', (res) => {
 
