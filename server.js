@@ -1,6 +1,6 @@
 const http = require("http");
 
-const port = 8080
+const port = 8000
 
 http.get('http://localhost:3000/', (res) => {
 
